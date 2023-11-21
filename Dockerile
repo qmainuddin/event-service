@@ -1,0 +1,11 @@
+FROM openjdk:17
+MAINTAINER Mohammad Seraj
+
+WORKDIR /app
+
+
+COPY target/Event-0.0.1-SNAPSHOT.jar /app/
+
+EXPOSE 8080
+
+CMD ["java", "-jar", "alumni-authentication-0.0.1-SNAPSHOT.jar"]

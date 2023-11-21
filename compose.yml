@@ -1,0 +1,17 @@
+services:
+  mysql-db:
+    image: 'mysql:latest'
+    environment:
+      - 'MYSQL_DATABASE=event'
+      - 'MYSQL_ROOT_PASSWORD=root'
+      - 'MYSQL_USER=seraj'
+      - 'MYSQL_PASSWORD=1'
+    ports:
+      - '3307:3306'
+    #    networks:
+    #      - alumni-network
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "ranjan", "-p1" ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
